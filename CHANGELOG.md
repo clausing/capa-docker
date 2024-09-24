@@ -3,6 +3,12 @@
 <!-- markdownlint-disable MD033 -->
 This file will be used to document notable changes
 
+## 2024-09-24
+
+### Changed
+
+- Updated to v7.3.0
+
 ## 2024-08-20
 
 ### Changed

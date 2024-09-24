@@ -1,8 +1,8 @@
 FROM python:3.10-slim-bookworm
 
 LABEL maintainer="Jim Clausing, jclausing@isc.sans.edu"
-LABEL version="capa v7.2.0"
-LABEL date="2024-08-20"
+LABEL version="capa v7.3.0"
+LABEL date="2024-09-24"
 LABEL description="Run capa in a docker container"
 
 RUN apt-get update && apt-get -y install --no-install-recommends wget unzip ca-certificates \
@@ -12,7 +12,7 @@ ENV PYTHONUNBUFFERED=1
 
 # Install FLOSS
 WORKDIR /tmp
-RUN wget https://github.com/mandiant/capa/releases/download/v7.2.0/capa-v7.2.0-linux.zip \
+RUN wget https://github.com/mandiant/capa/releases/download/v7.3.0/capa-v7.3.0-linux.zip \
   && unzip *-linux.zip && mv capa /usr/bin/ && rm *.zip \
   && useradd capa -m
 
