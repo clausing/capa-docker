@@ -1,18 +1,18 @@
-FROM python:3.12-slim-bookworm
+FROM python:3.12-slim-trixie
 
 LABEL maintainer="Jim Clausing, jclausing@isc.sans.edu"
-LABEL version="capa v9.4.0"
-LABEL date="2026-04-01"
+LABEL version="capa v10.0.0"
+LABEL date="2026-10-17"
 LABEL description="Run capa in a docker container"
 
 RUN apt-get update && apt-get -y install --no-install-recommends wget unzip ca-certificates \
-  curl 
+  curl
 
 ENV PYTHONUNBUFFERED=1
 
 # Install FLOSS
 WORKDIR /tmp
-RUN wget https://github.com/mandiant/capa/releases/download/v9.4.0/capa-v9.4.0-linux.zip \
+RUN wget https://github.com/mandiant/capa/releases/download/v10.0.0/capa-v10.0.0-linux.zip \
   && unzip *-linux.zip && mv capa /usr/bin/ && rm *.zip \
   && useradd capa -m
 
